@@ -90,12 +90,20 @@
   align-items: center;
   justify-content: center;
   transition: all var(--transition-normal);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .close-button:hover {
   background: var(--color-surface-hover);
   border-color: var(--color-primary);
   transform: rotate(90deg);
+}
+
+.close-button:active {
+  transform: scale(0.95);
+  background: var(--color-primary);
+  color: white;
 }
 
 .modal-header {
@@ -138,12 +146,22 @@
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
-  
+
   .envelope-card {
     padding: var(--spacing-lg);
   }
-  
+
   .modal-content {
     padding: var(--spacing-lg);
+    padding-top: var(--spacing-xl);
+  }
+
+  .close-button {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    z-index: 1001;
   }
 }
